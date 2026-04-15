@@ -1,4 +1,4 @@
-# wallpaper-fix
+# Intune Wallpaper Override
 
 Overrides a corporate/Intune-enforced desktop wallpaper on Windows 11 with a preferred image, and keeps it applied across logins.
 
