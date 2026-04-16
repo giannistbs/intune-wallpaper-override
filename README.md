@@ -4,15 +4,15 @@ Overrides a corporate/Intune-enforced desktop wallpaper on Windows 11 with a pre
 
 ## The problem
 
-Organizations managing Windows machines via Microsoft Intune (MDM) can enforce a wallpaper using the `PersonalizationCSP` policy. This downloads an image from a company-controlled URL and applies it at every login. Normal wallpaper settings in Windows are silently overridden — even calling the Win32 `SystemParametersInfo` API returns success but has no visible effect.
+Intune's `PersonalizationCSP` policy enforces a wallpaper by downloading an image from a company URL and applying it at every login.
 
-The actual image Windows renders is cached in a file called `TranscodedWallpaper`:
+The wallpaper Windows actually displays is stored in `TranscodedWallpaper`:
 
 ```
 C:\Users\<you>\AppData\Roaming\Microsoft\Windows\Themes\TranscodedWallpaper
 ```
 
-Intune writes to this file at login, which is why the corporate wallpaper keeps coming back.
+Intune overwrites this file on login, which is why the corporate wallpaper keeps coming back.
 
 ## How this works
 
